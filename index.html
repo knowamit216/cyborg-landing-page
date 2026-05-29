@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CYBORG X - The Future Is Here</title>
+<title>CYBORG X by Amit Khatri (CC) - The Future Is Here</title>
 
 <style>
 *{
@@ -28,6 +29,18 @@ body::before{
     linear-gradient(90deg, rgba(0,255,255,.1) 1px, transparent 1px);
     background-size:40px 40px;
     z-index:-2;
+}
+
+body::after{
+    content:"Created by Amit Khatri (CC)";
+    position:fixed;
+    top:15px;
+    right:20px;
+    color:#00ffff;
+    font-size:14px;
+    letter-spacing:1px;
+    text-shadow:0 0 10px #00ffff;
+    z-index:1000;
 }
 
 .hero{
@@ -62,6 +75,13 @@ body::before{
     color:#cfcfcf;
 }
 
+.creator{
+    margin-top:15px;
+    color:#00ffff;
+    font-size:1rem;
+    letter-spacing:2px;
+}
+
 .btn{
     display:inline-block;
     padding:15px 35px;
@@ -70,6 +90,7 @@ body::before{
     text-decoration:none;
     border-radius:30px;
     transition:.4s;
+    margin-top:20px;
 }
 
 .btn:hover{
@@ -184,6 +205,10 @@ body::before{
             Enter the next era of cybernetic evolution.
         </p>
 
+        <div class="creator">
+            Created by Amit Khatri (CC)
+        </div>
+
         <a href="#features" class="btn">Explore Future</a>
     </div>
 </section>
@@ -236,7 +261,7 @@ body::before{
 </section>
 
 <footer class="footer">
-    © 2026 CYBORG X | Future Technology Platform
+    © 2026 CYBORG X | Future Technology Platform | Created by Amit Khatri (CC)
 </footer>
 
 <script>
@@ -266,3 +291,4 @@ animateCounter("s3",10000);
 
 </body>
 </html>
+```
