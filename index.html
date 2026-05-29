@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBORG X - The Future Is Here</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#050816;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,255,255,.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,.1) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-2;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:
+    radial-gradient(circle at center,
+    rgba(0,255,255,.15),
+    transparent 60%);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:5rem;
+    color:#00ffff;
+    text-shadow:0 0 10px #00ffff,
+                 0 0 30px #00ffff,
+                 0 0 60px #00ffff;
+    animation:pulse 2s infinite;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin:20px 0;
+    color:#cfcfcf;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    border:2px solid #00ffff;
+    color:#00ffff;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.4s;
+}
+
+.btn:hover{
+    background:#00ffff;
+    color:#000;
+    box-shadow:0 0 20px #00ffff,
+               0 0 40px #00ffff;
+}
+
+.features{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    color:#00ffff;
+    font-size:2.5rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    padding:30px;
+    border:1px solid rgba(0,255,255,.2);
+    border-radius:20px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px cyan;
+}
+
+.card h3{
+    color:#00ffff;
+    margin-bottom:10px;
+}
+
+.stats{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.stats-container{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.stat h2{
+    color:#00ffff;
+    font-size:3rem;
+}
+
+.footer{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#aaa;
+}
+
+@keyframes pulse{
+    0%,100%{
+        text-shadow:0 0 10px #00ffff,
+                    0 0 30px #00ffff;
+    }
+    50%{
+        text-shadow:0 0 20px #00ffff,
+                    0 0 60px #00ffff,
+                    0 0 100px #00ffff;
+    }
+}
+
+.scanline{
+    position:fixed;
+    width:100%;
+    height:4px;
+    background:rgba(0,255,255,.5);
+    animation:scan 6s linear infinite;
+    z-index:999;
+}
+
+@keyframes scan{
+    0%{top:0;}
+    100%{top:100%;}
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:3rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scanline"></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>CYBORG X</h1>
+        <p>
+            Human Intelligence Enhanced by Artificial Intelligence.
+            Enter the next era of cybernetic evolution.
+        </p>
+
+        <a href="#features" class="btn">Explore Future</a>
+    </div>
+</section>
+
+<section id="features" class="features">
+    <h2 class="section-title">CORE TECHNOLOGIES</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>AI Neural Engine</h3>
+            <p>Advanced machine learning systems powering cybernetic intelligence.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cyber Security</h3>
+            <p>Military-grade protection for connected human systems.</p>
+        </div>
+
+        <div class="card">
+            <h3>Quantum Processing</h3>
+            <p>Ultra-fast decision making and predictive analytics.</p>
+        </div>
+
+        <div class="card">
+            <h3>Bio Integration</h3>
+            <p>Seamless synchronization between human and machine.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <h2 class="section-title">SYSTEM PERFORMANCE</h2>
+
+    <div class="stats-container">
+        <div class="stat">
+            <h2 id="s1">0</h2>
+            <p>AI Units</p>
+        </div>
+
+        <div class="stat">
+            <h2 id="s2">0</h2>
+            <p>Security Layers</p>
+        </div>
+
+        <div class="stat">
+            <h2 id="s3">0</h2>
+            <p>Connected Users</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    © 2026 CYBORG X | Future Technology Platform
+</footer>
+
+<script>
+
+function animateCounter(id,target){
+    let count=0;
+    let speed=target/100;
+
+    let interval=setInterval(()=>{
+        count+=speed;
+
+        if(count>=target){
+            count=target;
+            clearInterval(interval);
+        }
+
+        document.getElementById(id).innerText=
+        Math.floor(count);
+    },20);
+}
+
+animateCounter("s1",500);
+animateCounter("s2",128);
+animateCounter("s3",10000);
+
+</script>
+
+</body>
+</html>
